@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<risultati>
+  <metodo nome="Jacobi">
+    <tolleranza valore="0.0001">
+      <errore>0.0035403807574041005</errore>
+      <iterazioni>1314</iterazioni>
+      <tempo>0.0318751335144043</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-06">
+      <errore>3.54007334278084e-05</errore>
+      <iterazioni>2433</iterazioni>
+      <tempo>0.11108517646789551</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-08">
+      <errore>3.5397659362799523e-07</errore>
+      <iterazioni>3552</iterazioni>
+      <tempo>0.12409281730651855</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-10">
+      <errore>3.539456689179898e-09</errore>
+      <iterazioni>4671</iterazioni>
+      <tempo>0.16381311416625977</tempo>
+      </tolleranza>
+    </metodo>
+  <metodo nome="Gauss-Seidel">
+    <tolleranza valore="0.0001">
+      <errore>0.003506972597032734</errore>
+      <iterazioni>659</iterazioni>
+      <tempo>2.132006883621216</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-06">
+      <errore>3.5266968491593086e-05</errore>
+      <iterazioni>1218</iterazioni>
+      <tempo>3.9563326835632324</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-08">
+      <errore>3.517456976071784e-07</errore>
+      <iterazioni>1778</iterazioni>
+      <tempo>5.61077094078064</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-10">
+      <errore>3.508240275427292e-09</errore>
+      <iterazioni>2338</iterazioni>
+      <tempo>7.334532976150513</tempo>
+      </tolleranza>
+    </metodo>
+  <metodo nome="Gauss-Seidel-MySolve">
+    <tolleranza valore="0.0001">
+      <errore>0.003506972597032731</errore>
+      <iterazioni>659</iterazioni>
+      <tempo>1.7693250179290771</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-06">
+      <errore>3.5266968491593134e-05</errore>
+      <iterazioni>1218</iterazioni>
+      <tempo>3.229969024658203</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-08">
+      <errore>3.517456975988773e-07</errore>
+      <iterazioni>1778</iterazioni>
+      <tempo>4.663146734237671</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-10">
+      <errore>3.5082402919561007e-09</errore>
+      <iterazioni>2338</iterazioni>
+      <tempo>6.149576902389526</tempo>
+      </tolleranza>
+    </metodo>
+  <metodo nome="Gradiente">
+    <tolleranza valore="0.0001">
+      <errore>0.0027045724093629313</errore>
+      <iterazioni>890</iterazioni>
+      <tempo>0.07627487182617188</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-06">
+      <errore>2.7133391832159874e-05</errore>
+      <iterazioni>1612</iterazioni>
+      <tempo>0.1399669647216797</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-08">
+      <errore>2.6953373613316687e-07</errore>
+      <iterazioni>2336</iterazioni>
+      <tempo>0.1833209991455078</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-10">
+      <errore>2.7131653601116202e-09</errore>
+      <iterazioni>3058</iterazioni>
+      <tempo>0.24017810821533203</tempo>
+      </tolleranza>
+    </metodo>
+  <metodo nome="Gradiente Coniugato">
+    <tolleranza valore="0.0001">
+      <errore>4.082793158678907e-05</errore>
+      <iterazioni>38</iterazioni>
+      <tempo>0.005360126495361328</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-06">
+      <errore>3.7323397013840245e-07</errore>
+      <iterazioni>45</iterazioni>
+      <tempo>0.00341796875</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-08">
+      <errore>2.831873366280255e-09</errore>
+      <iterazioni>53</iterazioni>
+      <tempo>0.0040111541748046875</tempo>
+      </tolleranza>
+    <tolleranza valore="1e-10">
+      <errore>2.1917475709460623e-11</errore>
+      <iterazioni>59</iterazioni>
+      <tempo>0.00446629524230957</tempo>
+      </tolleranza>
+    </metodo>
+  </risultati>
