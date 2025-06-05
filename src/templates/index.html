@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Elaborazione immagine BMP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef1f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 420px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .form-group input[type="file"],
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3a86ff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #265ec6;
+    }
+
+    .message {
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .image-box {
+      text-align: center;
+    }
+
+    .image-box img {
+      width: 400px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .image-box p {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Elabora immagine BMP</h2>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="message">
+          {{ messages[0] }}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="image">Immagine BMP:</label>
+        {% if not original_image %}
+        <input type="file" name="image" id="image" accept=".bmp" required>
+        {% else %}
+        <input type="file" name="image" id="image" accept=".bmp">
+        {% endif %}
+        {% if original_image %}
+          <p style="margin-top: 8px;">
+          File caricato: <strong>{{ original_image }}</strong><br>
+          Dimensione: <strong>{{ original_dims }}</strong>
+        </p>
+        <img src="{{ url_for('static', filename='/' ~ original_image) }}" alt="Immagine caricata" style="max-width: 100px; margin-top: 8px;">
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="F">F (intero ≥ 1):</label>
+        <input type="number" name="F" id="F" value="{{ F or '' }}" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="d">d (tra 0 e 2F−2):</label>
+        <input type="number" name="d" id="d" value="{{ d or '' }}" required>
+      </div>
+
+      <button type="submit">Invia</button>
+    </form>
+  </div>
+
+  {% if original_image and processed_image %}
+  <p style="color:green;">Dati validi! Hai inserito F={{F}} e d={{d}}.</p>
+  <div class="images">
+    <div class="image-box">
+      <img src="{{ url_for('static', filename='/' ~ original_image) }}" alt="Immagine originale">
+      <p>Originale</p>
+    </div>
+
+    <div class="image-box">
+      <img src="{{ url_for('static', filename='/' ~ processed_image) }}" alt="Immagine elaborata">
+      <p>Elaborata</p>
+    </div>
+  </div>
+  {% endif %}
+
+</body>
+</html>
