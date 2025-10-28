@@ -6,12 +6,12 @@
   <<< Author notes: Diego Clemente >>>
 -->
 # Il codice per il primo progetto si trova nella cartella `Progetto1`.
-# Libreria di Solutori Iterativi per Matrici Simmetriche Positive
+## Libreria di Solutori Iterativi per Matrici Simmetriche Positive
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 
 
-## Descrizione
+### Descrizione
 
 Mini-libreria per risolvere sistemi lineari \(Ax = b\) con **matrici simmetriche definite positive** usando:
 
